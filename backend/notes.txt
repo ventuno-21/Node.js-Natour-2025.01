@@ -1,0 +1,101 @@
+=============run Project
+in terminal insert below code
+$ npm run dev
+============================================================
+=============deploying process
+
+$ git add . 
+$ git commit -m 'Ready to deployment'
+$ git push -u origin main
+
+
+============================================================
+
+useNewUrlParser, useUnifiedTopology, useFindAndModify, and useCreateIndex are no longer supported options. Mongoose 6 always behaves as if useNewUrlParser, useUnifiedTopology, and useCreateIndex are true, and useFindAndModify is false. Please remove these options from your code.
+
+// const DB = process.env.MONGODB_URI.replace('<password>', process.env.MONGODB_PASSWORD)
+// mongoose.connect(DB, {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false,
+//     useUnifiedTopology: true
+// }).then((con) => {
+//     console.log('MongoDB Connected...')
+//     // console.log(con.connection) // all details of MONGODB database will be shown here
+// })
+
+============================================================
+MONGODB_URI=mongodb+srv://ventuno:<password>@cluster0.vse9y.mongodb.net/<database name otherwise will be saved in test database>?retryWrites=true&w=majority&appName=Cluster0
+============================================================
+
+// const testTour = new Tour({
+//     name: 'Test Tour3',
+//     rating: 4.5,
+//     price: 80
+// })
+
+// testTour.save().then((doc) => {
+//     console.log('Test Tour saved:', doc)
+// }).catch((err) => {
+//     console.log('Error:', err)
+// })
+
+============================================================
+// exports.checkID = (req, res, next, val) => {
+//     console.log('Tour id is :', val)
+//     const id = req.params.id * 1
+//     const tour = tours.find(el => el.id === id)
+
+//     // if (id > tours.length) { ////or below is better 
+//     if (!tour) {
+//         return res.status(404).json({ status: 'failed', message: 'Invalid id' })
+//     }
+
+//     next()
+// }
+
+// exports.checkBody = (req, res, next) => {
+//     if (!req.body.name || !req.body.price)
+//         return res
+//             .status(400)
+//             .json({
+//                 status: 'fail',
+//                 message: 'A name or Price is missing'
+//             })
+//     next()
+// }
+============================================================
+================= parcel
+    // "watch:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
+    // "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+
+        "watch": "parcel watch index.html",
+    "build:parcel": "parcel build --dist-dir public/js"
+
+
+    when i downloaded parcel, and add below lines in package,json and run it, the index file that I was make inside public/js directory
+    replaced with the file name app.js
+
+        "watch:js": "parcel build ./public/js/index.js --dist-dir ./public/js",
+    "build:js": "parcel watch ./public/js/index.js --dist-dir ./public/js"
+    ============================================================
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/index.9daf4050.css">
+<title>Your Parcel Project</title>
+</head>
+<body>
+<h1>Welcome to Parcel!</h1> 
+<div class="sammy-wrapper">
+<div class="img-wrapper sammy-1">
+<img src="https://assets.digitalocean.com/articles/docker_node_image/sammy.png" alt="Sammy the Shark">
+</div>
+</div> 
+<button>Change the Background Color</button> 
+<script type="module" src="/index.a9c94235.js">
+</script>
+</body>
+</html>
